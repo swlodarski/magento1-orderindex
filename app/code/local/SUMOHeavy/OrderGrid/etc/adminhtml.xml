@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * SUMOHeavy_OrderGrid
+ *
+ * @category   SUMOHeavy
+ * @package    SUMOHeavy_OrderGrid
+ * @copyright  Copyright (c) 2017 SUMO Heavy Industries, LLC
+ * @author     Szymon Wlodarski <support@sumoheavy.com>
+ * @author     Daniel Szubart <support@sumoheavy.com>
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <sumoheavy_ordergrid translate="title" module="sumoheavy_ordergrid">
+                                        <title>Order Grid</title>
+                                        <sort_order>50</sort_order>
+                                    </sumoheavy_ordergrid>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
