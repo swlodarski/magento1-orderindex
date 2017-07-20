@@ -10,6 +10,12 @@
  */
 class SUMOHeavy_OrderGrid_Model_Observer
 {
+    /**
+     * Observer - sales order save after
+     *
+     * @param Varien_Event_Observer $observer
+     * @return $this
+     */
     public function onSalesOrderSaveAfter(Varien_Event_Observer $observer)
     {
         $order = $observer->getEvent()->getOrder();

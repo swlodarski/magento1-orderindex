@@ -10,8 +10,18 @@
  */
 class SUMOHeavy_OrderGrid_Helper_Data extends Mage_Core_Helper_Abstract
 {
+    /**
+     * Log file name
+     *
+     * @var string
+     */
     protected $_logFileName = 'sumoheavy_ordergrid.log';
 
+    /**
+     * Update order grid
+     * 
+     * @return $this
+     */
     public function updateSalesFlatOrderGrid()
     {
         $this->_log('Starting updateSalesFlatOrderGrid');
@@ -47,6 +57,11 @@ class SUMOHeavy_OrderGrid_Helper_Data extends Mage_Core_Helper_Abstract
         return $this;
     }
 
+    /**
+     * Add new log to log file
+     * 
+     * @param $message
+     */
     protected function _log($message)
     {
         Mage::log($message, null, $this->_logFileName);
