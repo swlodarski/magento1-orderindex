@@ -12,12 +12,8 @@ class SUMOHeavy_OrderGrid_Model_Observer
 {
     public function onSalesOrderSaveAfter(Varien_Event_Observer $observer)
     {
-        if(!Mage::helper('sumoheavy_ordergrid')->isEnabled()) {
-            return $this;
-        }
-
         $order = $observer->getEvent()->getOrder();
-        if(!Mage::app()->getStore()->isAdmin()) {
+        if (!Mage::app()->getStore()->isAdmin()) {
             $order->setForceUpdateGridRecords(true);
         }
 

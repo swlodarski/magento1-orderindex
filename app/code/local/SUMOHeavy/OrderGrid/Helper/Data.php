@@ -10,21 +10,10 @@
  */
 class SUMOHeavy_OrderGrid_Helper_Data extends Mage_Core_Helper_Abstract
 {
-    const XML_CONFIG_ORDERGRID_ENABLED = 'sumoheavy_ordergrid/general/enabled';
-
-    public function isEnabled($store = null)
-    {
-        return Mage::getStoreConfigFlag(self::XML_CONFIG_ORDERGRID_ENABLED, $store);
-    }
-
     protected $_logFileName = 'sumoheavy_ordergrid.log';
 
     public function updateSalesFlatOrderGrid()
     {
-        if(!$this->isEnabled()) {
-            return $this;
-        }
-
         $this->_log('Starting updateSalesFlatOrderGrid');
 
         $dateThreshold = Mage::getSingleton('core/date')
@@ -48,7 +37,7 @@ class SUMOHeavy_OrderGrid_Helper_Data extends Mage_Core_Helper_Abstract
 
         $orderIds = $resourceModel->getReadConnection()->fetchCol($collection->getSelect());
 
-        if(!empty($orderIds)) {
+        if (!empty($orderIds)) {
             $resourceModel->updateGridRecords($orderIds);
             $this->_log('Orders with IDs: ' . implode(', ', $orderIds) . ' were updated.');
         }
