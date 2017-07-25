@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * SUMOHeavy_OrderGrid
+ *
+ * @category   SUMOHeavy
+ * @package    SUMOHeavy_OrderGrid
+ * @copyright  Copyright (c) 2017 SUMO Heavy Industries, LLC
+ * @author     Szymon Wlodarski <support@sumoheavy.com>
+ * @author     Daniel Szubart <support@sumoheavy.com>
+ */
+-->
+<config>
+    <modules>
+        <SUMOHeavy_OrderGrid>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Mage_Sales />
+            </depends>
+        </SUMOHeavy_OrderGrid>
+    </modules>
+</config>

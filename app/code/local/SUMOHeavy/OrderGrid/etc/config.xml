@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * SUMOHeavy_OrderGrid
+ *
+ * @category   SUMOHeavy
+ * @package    SUMOHeavy_OrderGrid
+ * @copyright  Copyright (c) 2017 SUMO Heavy Industries, LLC
+ * @author     Szymon Wlodarski <support@sumoheavy.com>
+ * @author     Daniel Szubart <support@sumoheavy.com>
+ */
+-->
+<config>
+    <global>
+        <index>
+            <indexer>
+                <sumoheavy_ordergrid>
+                    <model>sumoheavy_ordergrid/grid_indexer_flat</model>
+                </sumoheavy_ordergrid>
+            </indexer>
+        </index>
+        <models>
+            <sumoheavy_ordergrid>
+                <class>SUMOHeavy_OrderGrid_Model</class>
+            </sumoheavy_ordergrid>
+        </models>
+
+        <helpers>
+            <sumoheavy_ordergrid>
+                <class>SUMOHeavy_OrderGrid_Helper</class>
+            </sumoheavy_ordergrid>
+        </helpers>
+    </global>
+
+    <frontend>
+        <events>
+            <sales_order_save_after>
+                <observers>
+                    <sumoheavy_ordergrid_sales_order_save_after>
+                        <type>singleton</type>
+                        <class>sumoheavy_ordergrid/observer</class>
+                        <method>onSalesOrderSaveAfter</method>
+                    </sumoheavy_ordergrid_sales_order_save_after>
+                </observers>
+            </sales_order_save_after>
+        </events>
+    </frontend>
+</config>
