@@ -39,7 +39,7 @@ class SUMOHeavy_OrderGrid_Model_Observer
                 );
             }
         }
-        
+
         return $this;
     }
 }

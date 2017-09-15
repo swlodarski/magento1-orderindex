@@ -19,7 +19,7 @@ class SUMOHeavy_OrderGrid_Helper_Data extends Mage_Core_Helper_Abstract
 
     /**
      * Update order grid
-     * 
+     *
      * @return $this
      */
     public function updateSalesFlatOrderGrid()
@@ -45,7 +45,7 @@ class SUMOHeavy_OrderGrid_Helper_Data extends Mage_Core_Helper_Abstract
                     array('nin' => $subSelect),
                 ));
 
-        $orderIds = $resourceModel->getReadConnection()->fetchCol($collection->getSelect());
+        $orderIds = $collection->getAllIds();
 
         if (!empty($orderIds)) {
             $resourceModel->updateGridRecords($orderIds);
@@ -59,7 +59,7 @@ class SUMOHeavy_OrderGrid_Helper_Data extends Mage_Core_Helper_Abstract
 
     /**
      * Add new log to log file
-     * 
+     *
      * @param $message
      */
     protected function _log($message)
