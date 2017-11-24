@@ -46,6 +46,24 @@
         </events>
     </frontend>
 
+    <crontab>
+        <jobs>
+            <sumoheavy_ordergrid_reindex_grid_indexer_flat>
+                <run>
+                    <model>sumoheavy_ordergrid/cron::reindexGridIndexerFlat</model>
+                </run>
+            </sumoheavy_ordergrid_reindex_grid_indexer_flat>
+        </jobs>
+    </crontab>
+
+    <default>
+        <sumoheavy_ordergrid>
+            <cron>
+                <cron_expr>* * * * *</cron_expr>
+            </cron>
+        </sumoheavy_ordergrid>
+    </default>
+
     <phpunit>
         <suite>
             <modules>
